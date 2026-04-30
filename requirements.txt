@@ -12,7 +12,7 @@ psycopg2-binary==2.9.9
 
 # Vector Store
 chromadb==0.5.0
-faiss-cpu==1.13.2
+
 
 # LLM & Embeddings
 anthropic==0.28.0
