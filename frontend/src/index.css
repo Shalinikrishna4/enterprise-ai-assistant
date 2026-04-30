@@ -1,0 +1,112 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #080a0f;
+  color: #c9cdd8;
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar { width: 3px; height: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+
+/* Prose styling for AI responses */
+.ai-prose { font-size: 14px; line-height: 1.8; color: #c9cdd8; }
+.ai-prose h1, .ai-prose h2, .ai-prose h3 {
+  color: #eef0f6;
+  font-weight: 600;
+  margin: 1.2em 0 0.5em;
+  letter-spacing: -0.01em;
+}
+.ai-prose h2 { font-size: 15px; }
+.ai-prose h3 { font-size: 14px; }
+.ai-prose p { margin-bottom: 0.8em; }
+.ai-prose ul, .ai-prose ol { padding-left: 1.5em; margin-bottom: 0.8em; }
+.ai-prose li { margin-bottom: 4px; }
+.ai-prose strong { color: #eef0f6; font-weight: 600; }
+.ai-prose em { color: #a0a8bc; font-style: italic; }
+.ai-prose code {
+  background: rgba(99,102,241,0.12);
+  border: 1px solid rgba(99,102,241,0.2);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 12px;
+  color: #a5b4fc;
+}
+.ai-prose pre {
+  background: #0d1017;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+  padding: 14px 16px;
+  overflow-x: auto;
+  margin: 0.8em 0;
+}
+.ai-prose pre code { background: none; border: none; padding: 0; color: #a8b5cc; font-size: 12.5px; }
+.ai-prose blockquote {
+  border-left: 2px solid rgba(99,102,241,0.5);
+  padding: 4px 14px;
+  color: #8892a4;
+  margin: 0.8em 0;
+  font-style: italic;
+}
+.ai-prose table { width: 100%; border-collapse: collapse; margin: 0.8em 0; font-size: 13px; }
+.ai-prose th {
+  background: rgba(255,255,255,0.04);
+  padding: 8px 12px;
+  border: 1px solid rgba(255,255,255,0.07);
+  color: #8892a4;
+  font-weight: 500;
+  text-align: left;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.ai-prose td { padding: 8px 12px; border: 1px solid rgba(255,255,255,0.06); }
+.ai-prose tr:hover td { background: rgba(255,255,255,0.02); }
+.ai-prose a { color: #818cf8; text-decoration: underline; text-underline-offset: 2px; }
+
+/* Animations */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; transform: scale(0.7); }
+  50%       { opacity: 1;   transform: scale(1);   }
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 8px rgba(99,102,241,0.3); }
+  50%       { box-shadow: 0 0 18px rgba(99,102,241,0.6); }
+}
+
+.slide-up { animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.fade-in  { animation: fadeIn 0.25s ease both; }
+.spin     { animation: spin 0.9s linear infinite; }
+.pulse    { animation: pulse 1.5s ease-in-out infinite; }
+.shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0.1) 25%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.1) 75%);
+  background-size: 400% 100%;
+  animation: shimmer 1.5s linear infinite;
+}
+.glow { animation: glow 2s ease-in-out infinite; }
